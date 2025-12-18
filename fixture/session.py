@@ -14,7 +14,7 @@ class SessionHelper:
 
     def login(self, username, password):
         wd = self.app.wd
-        wd.get("http://localhost/mantisbt-1.2.20/login_page.php")
+        wd.get(self.app.base_url + "login_page.php")
         wd.find_element(By.NAME, "username").clear()
         wd.find_element(By.NAME, "username").send_keys(username)
         wd.find_element(By.NAME, "password").clear()

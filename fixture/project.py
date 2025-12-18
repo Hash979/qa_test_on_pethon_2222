@@ -10,7 +10,7 @@ class ProjectHelper:
     def open_project_page(self):
         wd = self.app.wd
         if not wd.current_url.endswith("/manage_proj_page.php"):
-            wd.get("http://localhost/mantisbt-1.2.20/manage_proj_page.php")
+            wd.get(self.app.base_url + "manage_proj_page.php")
 
     def create(self, group):
         wd = self.app.wd
@@ -40,9 +40,8 @@ class ProjectHelper:
         for element in elements:
             text = element.text
             project_id = element.get_attribute("href").replace(
-                "http://localhost/mantisbt-1.2.20/manage_proj_edit_page.php?project_id=",
-                ""
-            )
+                self.app.base_url + "manage_proj_edit_page.php?project_id=",
+                "")
             self.project_cache.append(Project(name=text, id=project_id))
 
         return list(self.project_cache)
