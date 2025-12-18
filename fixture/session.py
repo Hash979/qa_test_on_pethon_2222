@@ -46,3 +46,7 @@ class SessionHelper:
             else:
                 self.logout()
         self.login(username, password)
+
+    def can_login(self, username, password):
+        wd = self.app
+        self.login(username=username, password=password)
