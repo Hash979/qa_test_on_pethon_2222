@@ -1,0 +1,9 @@
+{
+  "web": {
+    "baseurl": "http://localhost/mantisbt-1.2.20/"
+  },
+  "web_config": {
+    "username": "administrator",
+    "password": "root"
+  }
+}
