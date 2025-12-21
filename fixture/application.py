@@ -30,7 +30,7 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        if not wd.current_url(self.app.base_url):
+        if wd.current_url != self.base_url:
             wd.get(self.base_url)
 
     def destroy(self):
